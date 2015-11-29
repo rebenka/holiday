@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           targetNamespace="http://rebenka.web.service.com/hr/schemas"
+           xmlns:hr="http://rebenka.web.service.com/hr/schemas"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="HolidayRequest">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="Holiday" type="hr:HolidayType"/>
+                <xs:element name="Employee" type="hr:EmployeeType"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="HolidayType">
+        <xs:sequence>
+            <xs:element type="xs:date" name="StartDate"/>
+            <xs:element type="xs:date" name="EndDate"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EmployeeType">
+        <xs:sequence>
+            <xs:element type="xs:integer" name="Number"/>
+            <xs:element type="xs:string" name="FirstName"/>
+            <xs:element type="xs:string" name="LastName"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
